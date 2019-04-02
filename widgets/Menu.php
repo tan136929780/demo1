@@ -51,7 +51,7 @@ class Menu extends Widget
             }
             if (intval($depth) == 1) {
                 //加入Dashboard菜单
-                array_unshift($menus, '<li><a href="' . Url::to(['welcome/index']) . '"><i class="fa fa-home"></i>' . Yii::t('app', 'Dashboard') . '</a></li>');
+                array_unshift($menus, '<li><a href="' . Url::to(['welcome/index']) . '"><i class="fa fa-home"></i>' . Yii::t('app', '首页') . '</a></li>');
             }
             $options = [
                 'class' => intval($depth) == 1 ? '' : 'submenu',
