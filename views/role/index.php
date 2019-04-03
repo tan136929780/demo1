@@ -26,7 +26,7 @@ $can_update = $current_user->hasPrivilege('/role/update');
     <?php if ($can_create) { ?>
     <div class="btn-toolbar list-toolbar pull-right hidden-sm hidden-xs">
         <?= Html::a(
-            '<i class="fa fa-plus"></i> ' . Yii::t('app', '创建角色权限'),
+            '<i class="fa fa-plus"></i> ' . Yii::t('app', '创建角色'),
             ['create'],
             ['class' => 'btn btn-success']
         ) ?>
