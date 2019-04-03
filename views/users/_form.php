@@ -102,7 +102,7 @@ use yii\widgets\ActiveForm;
         </div>
     </div>
     <div class="form-group col-lg-offset-3">
-        <?= Html::submitButton($model->isNewRecord ? '创建' : '修改', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton('保存', ['class' => 'btn btn-primary']) ?>
     </div>
     <?php ActiveForm::end(); ?>
 </div>

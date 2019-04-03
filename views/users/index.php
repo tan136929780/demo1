@@ -67,30 +67,45 @@ $canDelete                     = $currentUser->hasPrivilege('删除用户');
                 },
             ],
             [
-                'attribute' => 'create_user_id',
+                'attribute' => 'update_user_id',
                 'value'     => function ($dataProvider) {
                     return $dataProvider->getupdateUserName();
                 },
             ],
             [
-                'class'    => 'yii\grid\ActionColumn',
-                'template' => ' {view}&nbsp;' . ($canUpdate ? '{update}&nbsp;' : '') . ($canDelete ? '{delete}' : ''),
-                'header'   => '操作',
-                'buttons'  => [
-                    'view'   => function ($url, $model) {
-                        return Html::a('<span>查看</span>', $url);
+                'header' => Yii::t('app', '操作'),
+                'class' => 'yii\grid\ActionColumn',
+                'buttons' => [
+                    'view' => function ($url, $model, $key) {
+                        $options = [
+                            'title' => '查看',
+                            'aria-label' => '查看',
+                            'data-pjax' => '0',
+                            'class' => 'btn btn-default  btn-sm',
+                        ];
+                        return Html::a(Yii::t('app', '查看'), $url, $options);
                     },
-                    'update' => function ($url, $model) {
-                        return Html::a('<span>修改</span>', $url);
+                    'update' => function ($url, $model, $key) {
+                        $options = [
+                            'title' => Yii::t('app', '编辑'),
+                            'aria-label' => Yii::t('app', '编辑'),
+                            'data-pjax' => '0',
+                            'class' => 'btn btn-default  btn-sm',
+                        ];
+                        return Html::a(Yii::t('app', '编辑'), $url, $options);
                     },
-                    'delete' => function ($url, $model) {
-                        return Html::a('<span>删除</span>', $url, [
-                                'data' => [
-                                    'confirm' => '确 定 删 除 ?',
-                                    'method'  => 'post'
-                                ],
-                            ]);
-                    },
+                    'delete' => function ($url, $model, $key) {
+                        return Html::a(
+                            '<span class="glyphicon glyphicon-trash"></span>',
+                            $url,
+                            [
+                                'class' => 'btn btn-danger  btn-sm',
+                                'title' => Yii::t('app', '删除'),
+                                'data-method' => 'post',
+                                'data-confirm' => Yii::t('app', '确定删除吗?')
+                            ]
+                        );
+                    }
                 ],
             ],
         ],

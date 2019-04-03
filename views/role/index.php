@@ -47,30 +47,40 @@ $can_update = $current_user->hasPrivilege('/role/update');
             ],
             'description',
             [
-                'header'=>Yii::t('app','操作'),
+                'header' => Yii::t('app', '操作'),
                 'class' => 'yii\grid\ActionColumn',
-                'template' => ( $can_view ? '{view} ' : '' ) . ( $can_update ? '{update}' : '' ),
-                'options'=> ['style'=>'width:150px'],
-                'buttons'=>[
+                'buttons' => [
                     'view' => function ($url, $model, $key) {
                         $options = [
                             'title' => '查看',
                             'aria-label' => '查看',
                             'data-pjax' => '0',
-                            'class'=>'btn btn-primary  btn-sm',
+                            'class' => 'btn btn-default  btn-sm',
                         ];
                         return Html::a(Yii::t('app', '查看'), $url, $options);
                     },
                     'update' => function ($url, $model, $key) {
                         $options = [
-                            'title' => Yii::t('app', '修改'),
-                            'aria-label' => Yii::t('app', '修改'),
+                            'title' => Yii::t('app', '编辑'),
+                            'aria-label' => Yii::t('app', '编辑'),
                             'data-pjax' => '0',
-                            'class'=>'btn btn-primary  btn-sm',
+                            'class' => 'btn btn-default  btn-sm',
                         ];
-                        return Html::a(Yii::t('app', '修改'), $url, $options);
+                        return Html::a(Yii::t('app', '编辑'), $url, $options);
                     },
-                ]
+                    'delete' => function ($url, $model, $key) {
+                        return Html::a(
+                            '<span class="glyphicon glyphicon-trash"></span>',
+                            $url,
+                            [
+                                'class' => 'btn btn-danger  btn-sm',
+                                'title' => Yii::t('app', '删除'),
+                                'data-method' => 'post',
+                                'data-confirm' => Yii::t('app', '确定删除吗?')
+                            ]
+                        );
+                    }
+                ],
             ],
         ],
     ]); ?>

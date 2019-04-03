@@ -89,7 +89,7 @@ function renderPrivilege($items = [])
 
     <div class="form-group submit-content">
         <div class="col-sm-offset-1">
-            <?= Html::submitButton(Yii::t('app', '保存'), ['class' => 'btn btn-primary btn-lg']) ?>
+            <?= Html::submitButton(Yii::t('app', '保存'), ['class' => 'btn btn-primary']) ?>
         </div>
     </div>
 
