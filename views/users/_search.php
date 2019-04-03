@@ -7,12 +7,12 @@ use yii\widgets\ActiveForm;
 /* @var $model app\models\UsersSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-<div class="users-search">
+<div class="users-search form-inline">
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
         'method' => 'get',
     ]); ?>
-        <div class="form-group-lg">
+        <div class="form-group">
             <div class="form-group">
                 <div class="col-sm-3">
                     <?= Html::activeInput('input', $model, 'user_code', ['class' => 'form-control user-code', 'placeholder' => Yii::t('app', '账户名')]) ?>
@@ -43,9 +43,11 @@ use yii\widgets\ActiveForm;
                     <?= Html::activeDropDownList($model, 'category', $model->category(), ['class' => 'form-control category', 'prompt' => Yii::t('app', '选择用户类别')]) ?>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-2 form-group">
-            <?= Html::submitButton(Yii::t('app', '查找'), ['class' => 'btn btn-primary', 'id' => 'submit-btn']) ?>
+            <div class="form-group">
+                <div class="col-sm-2">
+                    <?= Html::submitButton(Yii::t('app', '查找'), ['class' => 'btn btn-primary', 'id' => 'submit-btn']) ?>
+                </div>
+            </div>
         </div>
 
     <?php ActiveForm::end(); ?>

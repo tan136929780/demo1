@@ -26,12 +26,14 @@ class AppAsset extends AssetBundle
         'css/site.css',
         'css/theme.css',
 //        'css/premium.css',
+        'css/kalendae.css',
     ];
     public $js = [
         'js/bootstrap.js',
         'js/main.js',
         'js/jquery.cookie.js',
         'js/lock.js',
+        'js/kalendae.standalone.min.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

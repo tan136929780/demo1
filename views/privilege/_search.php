@@ -22,7 +22,7 @@ use yii\widgets\ActiveForm;
 
         <?= Html::dropDownList('PrivilegeSearch[controller]', $model->controller, $controllers, ['class' => 'form-control', 'prompt' => '选择控制器'])?>
 
-        <?= Html::submitButton('<i class="fa fa-search"></i> ' . Yii::t('app', '搜索'), ['class' => 'btn btn-default', 'id' => 'search']) ?>
+        <?= Html::submitButton('<i class="fa fa-search"></i> ' . Yii::t('app', '搜索'), ['class' => 'btn btn-primary', 'id' => 'search']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

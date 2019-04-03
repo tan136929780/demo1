@@ -6,7 +6,7 @@ use yii\widgets\ActiveForm;
 $queryParams = Yii::$app->request->queryParams;
 ?>
 
-<div class="role-search">
+<div class="role-search form-inline">
 
     <?php $form = ActiveForm::begin([
         'id' => 'role-form',
