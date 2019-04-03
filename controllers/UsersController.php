@@ -135,8 +135,7 @@ class UsersController extends BaseController
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)
-             ->delete();
+        Users::updateAll(['status' => 0], ['id' => $id]);
 
         return $this->redirect(['index']);
     }

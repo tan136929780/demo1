@@ -106,9 +106,7 @@ class RoleController extends BaseController
      */
     public function actionDelete($id)
     {
-        $model = $this->findModel($id);
-        $model->status = Constant::STATUS_DISABLE;
-        $model->save();
+        $this->findModel($id)->delete();
         return $this->redirect(['index']);
     }
 
