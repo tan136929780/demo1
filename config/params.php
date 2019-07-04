@@ -3,5 +3,5 @@
 return [
     'DEFAULT_PASSWORD' => 'new.123456',
     'PASSWORDSOLT'     => 'demo',
-    'adminEmail'       => 'admin@example.com',
+    'adminEmail'       => '136929780@qq.com',
 ];
