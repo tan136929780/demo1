@@ -16,6 +16,9 @@ defined('DEFAULT_LOCAL_DATE_ZONE') || define('DEFAULT_LOCAL_DATE_ZONE', 'PRC');
 require(__DIR__ . '/../helpers/func.php');
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
+$params = require __DIR__ . '/../config/params.php';
+
+defined('ASSET_SERVER') || define('ASSET_SERVER', $params['ASSET_SERVER'] . '/assets/');
 
 $config = require __DIR__ . '/../config/web.php';
 
